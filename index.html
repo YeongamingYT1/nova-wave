@@ -2,7 +2,9 @@
 <html lang="id" x-data="{ cart: 0, mobileMenu: false, loginModal: false }">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Viora Bracelet — Nova Wave</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="Nova_Wave_Logo.png">
@@ -76,6 +78,23 @@ tailwind.config = {
     .shadow-luxury{
       box-shadow: 0 25px 50px rgba(15,23,42,0.08);
     }
+
+    body{
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+button{
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
   </style>
 </head>
 
@@ -87,21 +106,26 @@ tailwind.config = {
       <div class="flex items-center justify-between">
 
         <!-- LOGO -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3 md:gap-4">
 
-    <div class="w-16 h-16 rounded-full overflow-hidden shadow-xl border border-slate-200">
-        <img src="Nova Wave LOGO cropp.png"
-     class="w-full h-full object-contain">
+    <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden shadow-xl border border-slate-200">
+
+        <img
+            src="Nova Wave LOGO cropp.png"
+            class="w-full h-full object-contain">
+
     </div>
 
     <div>
-        <h1 class="font-black tracking-[0.35em] text-slate-900 text-2xl">
+
+        <h1 class="font-black tracking-[0.25em] md:tracking-[0.35em] text-slate-900 text-lg md:text-2xl">
             NOVA WAVE
         </h1>
 
-        <p class="text-slate-500 text-sm">
+        <p class="hidden md:block text-slate-500 text-sm">
             Student Company Crafting Waves of Creativity
         </p>
+
     </div>
 
 </div>
@@ -159,7 +183,7 @@ tailwind.config = {
            class="lg:hidden pt-6 pb-2 flex flex-col gap-4 text-center">
 
         <a href="#home" class="hover:text-primaryDark">Home</a>
-        <a href="#story" class="hover:text-primaryDark">Story</a>
+        <a href="#story" class="hover:text-primaryDark">Tentang Kami</a>
         <a href="#collection" class="hover:text-primaryDark">Collection</a>
         <a href="#contact" class="hover:text-primaryDark">Contact</a>
 
@@ -168,7 +192,7 @@ tailwind.config = {
           Login
         </button>
 
-        <a href="https://wa.me/6281234567890"
+        <a href="https://wa.me/62085185212663"
           target="_blank"
           class="px-5 py-3 rounded-full bg-primary text-white">
           Beli via WA
@@ -179,7 +203,7 @@ tailwind.config = {
 
   <!-- HERO -->
   <section id="home" class="hero-glow pt-40 lg:pt-52 pb-24 px-6">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
       <!-- LEFT -->
       <div>
@@ -189,7 +213,7 @@ tailwind.config = {
           Crafting Waves of Timeless Natural Beauty
         </div>
 
-        <h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-tight mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-tight mb-8">
           <span class="gradient-text">
             Viora Bracelet:
           </span>
@@ -291,7 +315,7 @@ this.current=(this.current+1)%this.products.length
     <!-- Gambar -->
     <img
         :src="products[current].image"
-        class="relative z-10 w-full h-[650px] object-cover rounded-[40px] shadow-luxury duration-500">
+        class="relative z-10 w-full h-[350px] md:h-[500px] lg:h-[650px] object-cover rounded-[40px] shadow-luxury duration-500">
 
     <!-- Nama Produk -->
     <div class="absolute bottom-6 left-6 z-20 glass rounded-3xl px-6 py-5">
@@ -310,7 +334,7 @@ this.current=(this.current+1)%this.products.length
     <!-- Tombol kiri -->
     <button
         @click="current=(current-1+products.length)%products.length"
-        class="absolute z-20 left-5 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white shadow-xl hover:scale-110 duration-300">
+        class="absolute z-20 left-5 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white shadow-xl hover:scale-110 duration-300">
 
         <i class="fa-solid fa-chevron-left"></i>
 
@@ -329,7 +353,7 @@ this.current=(this.current+1)%this.products.length
   </section>
 
   <!-- STORY -->
-  <section id="story" class="py-28 px-6 bg-white">
+  <section id="story" class="py-20 md:py-28 px-6 md:px-10 bg-white">
     <div class="max-w-7xl mx-auto">
 
       <div class="text-center mb-20">
@@ -430,7 +454,7 @@ WAVE berarti  gelombang, yang merepresentasikan pergerakan perubahan berkelanjut
   </section>
 
   <!-- COLLECTION -->
-  <section id="collection" class="py-28 px-6 bg-slate-50">
+  <section id="collection" class="py-20 md:py-28 px-6 md:px-10 bg-slate-50">
     <div class="max-w-7xl mx-auto">
 
       <div class="text-center mb-20">
@@ -524,7 +548,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -609,7 +633,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -693,7 +717,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -777,7 +801,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -861,7 +885,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -945,7 +969,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1029,7 +1053,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1113,7 +1137,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1197,7 +1221,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1280,7 +1304,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1363,7 +1387,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1446,7 +1470,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1529,7 +1553,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
             </button>
 
-            <a href="https://wa.me/6281234567890"
+            <a href="https://wa.me/62085185212663"
                class="flex-1 py-4 rounded-full bg-[#A4FFC4] text-slate-900 font-bold text-center hover:bg-[#8EF0B2] duration-300">
 
                 WhatsApp
@@ -1546,7 +1570,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
   </section>
 
   <!-- TEAM -->
-  <section class="py-28 px-6 bg-white">
+  <section class="py-20 md:py-28 px-6 md:px-10 bg-white">
     <div class="max-w-7xl mx-auto">
 
       <div class="text-center mb-20">
@@ -1567,14 +1591,14 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
         <!-- MEMBER -->
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     <div class="bg-white rounded-[30px] shadow-xl p-8 text-center border border-slate-100 hover:-translate-y-2 duration-300">
 
     <img src="WhatsApp Image 2026-05-29 at 14.56.46.jpeg"
          class="w-36 h-36 rounded-full object-cover mx-auto mb-6">
 
     <h3 class="font-black text-2xl mb-2">
-        Chief Executive DIRECTOR 
+        President Director 
     </h3>
 
     <p class="text-primaryDark font-medium leading-relaxed">
@@ -1691,15 +1715,15 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
 
   <div class="bg-white rounded-[30px] shadow-xl p-8 text-center border border-slate-100 hover:-translate-y-2 duration-300">
 
-    <img src="foto1.jpg"
+    <img src="Allen.jpeg"
          class="w-36 h-36 rounded-full object-cover mx-auto mb-6">
 
     <h3 class="font-black text-2xl mb-2">
-        VP WEBSITE DEVELOPER
+        WEBSITE DEVELOPER
     </h3>
 
     <p class="text-primaryDark font-medium leading-relaxed">
-        WEBCRAFTED BY ALEN
+        Alan
     </p>
 
 </div>
@@ -1747,7 +1771,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
               <i class="fa-solid fa-location-dot text-primary mt-1"></i>
 
               <p>
-                Jl. AH. Nasution No.27, Pasir Endah, Kec. Ujung Berung, Bandung 40619Indonesia
+                Jl. A.H. Nasution No. 27, Pasir Endah, Kec. Ujung Berung, Kota Bandung, Jawa Barat 40619, Indonesia
               </p>
             </div>
 
@@ -1755,7 +1779,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
               <i class="fa-solid fa-envelope text-primary"></i>
 
               <p>
-                novawave@studentcompany.id
+                scnovawave@gmail.com
               </p>
             </div>
 
@@ -1788,7 +1812,7 @@ class="w-full lg:w-96 px-6 py-4 rounded-full border border-slate-200 focus:outli
               <i class="fa-brands fa-tiktok"></i>
             </a>
 
-            <a href="https://api.whatsapp.com/send/?phone=62085185212663&text&type=phone_number&app_absent=0"
+            <a href="https://wa.me/62085185212663"
                class="w-14 h-14 rounded-full bg-white/10 hover:bg-primary transition flex items-center justify-center text-xl">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
